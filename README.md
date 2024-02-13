@@ -1,37 +1,37 @@
 # RDRec
 
-## rationale distillation
+## Step 1 distill rationale before run RDRec
 
-### Step 1 download the model weights and tokenizer of llama 2
-
-#### (a) install llama 2 environment 
+#### (a) install llama 2 （download model weights and tokenizer）
         get License from [the site](https://llama.meta.com/llama-downloads/)
-        cd llama 
-	    ./download.sh (License required)
-        pip install -e .
+        >> cd llama 
+	    >> ./download.sh (License required)
+        >> pip install -e .
 
 #### (b) test llama 2 environment
-        torchrun --nproc_per_node 1 example_chat_completion.py \
-        --ckpt_dir llama-2-7b-chat/ \
-        --tokenizer_path tokenizer.model \
-        --max_seq_len 512 --max_batch_size 6
+        >> torchrun --nproc_per_node 1 example_chat_completion.py \
+          --ckpt_dir llama-2-7b-chat/ \
+          --tokenizer_path tokenizer.model \
+          --max_seq_len 512 --max_batch_size 6
 
 #### (c) rationale distillation  ({dataset}: beauty, sports, and toys.)
-        cd data/{dataset}
-        python distillation_{dataset}.py
+        >> torchrun --nproc_per_node 1 distillation_{dataset}.py \
+          --ckpt_dir llama/llama-2-7b-chat/ \
+          --tokenizer_path llama/tokenizer.model \
+          --max_seq_len 512 --max_batch_size 6
 
-### Step 2 run RDRec
+## Step 2 run RDRec
 
 #### (a) install requirement 
-        pip install -r  requirement.txt
+        >> pip install -r  requirement.txt
 
 #### (b) pre-training 
-        python pretrain.py
+        >> python pretrain.py
 
 #### (c) recommendation 
-        python seq.py
-        python topn.py
-        python exp.py
+        >> python seq.py
+        >> python topn.py
+        >> python exp.py
 
 
 
