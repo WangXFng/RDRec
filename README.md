@@ -8,19 +8,19 @@
 	    >> ./download.sh (License required)
         >> pip install -e .
 
-#### (b) test llama 2 environment
+#### (b) test llama 2 environment  (under ./llama )
         >> torchrun --nproc_per_node 1 example_chat_completion.py \
           --ckpt_dir llama-2-7b-chat/ \
           --tokenizer_path tokenizer.model \
           --max_seq_len 512 --max_batch_size 6
 
-#### (c) rationale distillation  ({dataset}: beauty, sports, and toys.)
-        >> torchrun --nproc_per_node 1 distillation_{dataset}.py \
+#### (c) rationale distillation  ({dataset}: beauty, sports, and toys.) (under ./RDRec )
+        >> torchrun --nproc_per_node 1 data/{dataset}/distillation_{dataset}.py \
           --ckpt_dir llama/llama-2-7b-chat/ \
           --tokenizer_path llama/tokenizer.model \
           --max_seq_len 512 --max_batch_size 6
 
-## Step 2 run RDRec
+## Step 2 train and test RDRec
 
 #### (a) install requirement 
         >> pip install -r  requirement.txt
