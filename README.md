@@ -1,0 +1,53 @@
+# RDRec
+
+## rationale distillation
+
+### Step 1 download the model weights and tokenizer of llama 2
+
+#### (a) install llama 2 environment 
+        get License from [the site](https://llama.meta.com/llama-downloads/)
+        cd llama 
+	    ./download.sh (License required)
+        pip install -e .
+
+#### (b) test llama 2 environment
+        torchrun --nproc_per_node 1 example_chat_completion.py \
+        --ckpt_dir llama-2-7b-chat/ \
+        --tokenizer_path tokenizer.model \
+        --max_seq_len 512 --max_batch_size 6
+
+#### (c) rationale distillation  ({dataset}: beauty, sports, and toys.)
+        cd data/{dataset}
+        python distillation_{dataset}.py
+
+### Step 2 run RDRec
+
+#### (a) install requirement 
+        pip install -r  requirement.txt
+
+#### (b) pre-training 
+        python pretrain.py
+
+#### (c) recommendation 
+        python seq.py
+        python topn.py
+        python exp.py
+
+
+
+
+## Amazon Data & Model Checkpoint to [Download](https://lifehkbueduhk-my.sharepoint.com/:f:/g/personal/16484134_life_hkbu_edu_hk/Eq-8HUTFas1Fm0xw2-4S-9IBGmRzW2GGA-ZJi2d3Q2HxTQ?e=vp7Iiy)
+- Sports & Outdoors
+- Beauty
+- Toys & Games
+
+## Code Dependencies
+- Python 3.6
+- PyTorch 1.6
+- transformers 4.18.0
+
+## Code Reference
+- [P5](https://github.com/jeykigung/P5)
+- [POD](https://github.com/lileipisces/POD)
+- [llama 2](https://github.com/facebookresearch/llama)
+
