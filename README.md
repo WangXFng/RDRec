@@ -33,14 +33,6 @@
         >> python topn.py
         >> python exp.py
 
-
-
-
-## Amazon Data & Model Checkpoint to [Download](https://lifehkbueduhk-my.sharepoint.com/:f:/g/personal/16484134_life_hkbu_edu_hk/Eq-8HUTFas1Fm0xw2-4S-9IBGmRzW2GGA-ZJi2d3Q2HxTQ?e=vp7Iiy)
-- Sports & Outdoors
-- Beauty
-- Toys & Games
-
 ## Code Dependencies
 - Python 3.6
 - PyTorch 1.6
