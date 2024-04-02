@@ -1,4 +1,4 @@
-# RDRec
+# RDRec: Rationale distillation for LLM-based commendation
 
 ## Step. 1 distill rationale before running RDRec
 

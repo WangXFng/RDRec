@@ -112,14 +112,6 @@ class ExpSampler:
             record = self.exp_data[idx]
             template = random.choice(exp_templates)
             inputs.append(template.format(record['user'], record['item']))
-
-            # record['rationale'] = record['rationale']
-                                   # (.replace('The user', 'user_{}'.format(record['user'])) \
-                                   # .replace('The user', 'user_{}'.format(record['user'])) \
-                                   # .replace('the user', 'user_{}'.format(record['user'])) \
-                                   # .replace('The item', 'item_{}'.format(record['item'])) \
-                                   # .replace('the item', 'item_{}'.format(record['item']))) \
-
             outputs.append(record['explanation'])
             self.step += 1
         return task, inputs, outputs
@@ -146,18 +138,10 @@ class ReaSampler:
             self.check_step()
             idx = self.index_list[self.step]
             record = self.exp_data[idx]
-            # template = random.choice(rea_templates)
 
             inputs.append(rea_templates[0].format(record['user']))
             inputs.append(rea_templates[1].format(record['item']))
-            # record['rationale'] = record['rationale'].replace('The user', 'user_{}'.format(record['user'])) \
 
-            #                        .replace('The user', 'user_{}'.format(record['user'])) \
-            #                        .replace('the user', 'user_{}'.format(record['user'])) \
-            #                        .replace('The item', 'item_{}'.format(record['item'])) \
-            #                        .replace('the item', 'item_{}'.format(record['item'])) \
-
-            # "user_preference":  "item_attribution
             outputs.append(record['user_preference'])
             outputs.append(record['item_attribution'])
 
@@ -263,7 +247,7 @@ class TopNSampler:
 
 
 class AllBatchify:
-    def __init__(self, exp_data, user2items_pos, negative_num, item_num, tokenizer, exp_len, batch_size, ratio='1:3:1:1'): # 1:1:1:3
+    def __init__(self, exp_data, user2items_pos, negative_num, item_num, tokenizer, exp_len, batch_size, ratio='1:1:1:3'):  # ratio: explanation:sequential:rationale:topn
         self.exp_sampler = ExpSampler(exp_data)
         self.seq_sampler = SeqSampler(user2items_pos)
         self.topn_sampler = TopNSampler(user2items_pos, negative_num, item_num)
@@ -273,8 +257,6 @@ class AllBatchify:
         ratio = [float(r) for r in ratio.split(':')]
         self.exp_num = int(ratio[0] / sum(ratio) * batch_size)
         self.seq_num = int(ratio[1] / sum(ratio) * batch_size)
-        # self.rea_num = int(ratio[2] / sum(ratio) * batch_size)
-        # self.topn_num = batch_size - self.exp_num - self.seq_num # - self.rea_num
         self.rea_num = int(ratio[2] / sum(ratio) * batch_size)
         self.topn_num = batch_size - self.exp_num - self.seq_num - self.rea_num
         if self.exp_num > 0:
@@ -381,9 +363,6 @@ class ReaBatchify:
             output_list.append(x['user_preference'])
             output_list.append(x['item_attribution'])
 
-            # input_list.append(template.format(x['user'], x['item']))
-            # output_list.append(x['explanation'])
-
         encoded_source = tokenizer(input_list, padding=True, return_tensors='pt')
         self.source_seq = encoded_source['input_ids'].contiguous()
         self.source_mask = encoded_source['attention_mask'].contiguous()
@@ -412,9 +391,6 @@ class ReaBatchify:
         task = torch.concat([torch.ones((int((offset - start)/2),), dtype=torch.int64) * 3,
                              torch.ones((int((offset - start)/2),), dtype=torch.int64) * 4], 0)
 
-        # task = torch.ones((offset - start,), dtype=torch.int64) * self.task_id
-
-        # print(task.size())
         return task, source_seq, source_mask, whole_word, target_seq
 
     def next_batch_valid(self):
