@@ -42,6 +42,6 @@
 - [llama 2](https://github.com/facebookresearch/llama)
 
 ## Note
-- There are some fluctuations in results by RDRec for sequential recommendations. We reported an average results in 10-trial runs in the paper  (See t_test.py for more details). If results are not idea, please pretrain the model once again. 
+- There are some fluctuations in results by RDRec for sequential recommendations. We reported an average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/t_test.py) for more details). If results are not idea, please pretrain the model once again. 
 - If you met any question, please feel free to contact me through kaysenn@163.com.
 
