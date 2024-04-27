@@ -25,21 +25,23 @@
 #### (a) Install requirement 
         >> pip install -r  requirement.txt
 
-#### (b) Pre-training 
-        >> python pretrain.py
+#### (b) Pre-training ({dataset}: beauty, sports, and toys.) (under ./RDRec )
+        >> python pretrain.py ./data/{dataset}/ --cuda --batch_size 64 --checkpoint ./checkpoint/{dataset}/
 
-#### (c) Recommendation inference
-        >> python seq.py
-        >> python topn.py
-        >> python exp.py
+#### (c) Recommendation inference 
+        >> python seq.py ./data/{dataset}/ --cuda --batch_size 32 --checkpoint ./checkpoint/{dataset}/
+        >> python topn.py ./data/{dataset}/ --cuda --batch_size 32 --checkpoint ./checkpoint/{dataset}/
+        >> python exp.py ./data/{dataset}/ --cuda --batch_size 32 --checkpoint ./checkpoint/{dataset}/
 
 ## Code Dependencies
-- Python 3.6
-- PyTorch 1.6
-- transformers 4.18.0
+        >> pip install -r requirement.txt
 
 ## Code Reference
 - [P5](https://github.com/jeykigung/P5)
 - [POD](https://github.com/lileipisces/POD)
 - [llama 2](https://github.com/facebookresearch/llama)
+
+## Note
+- There are some fluctuations in results by RDRec for sequential recommendations. We reported an average results in 10-trial runs in the paper  (See t_test.py for more details). If results are not idea, please pretrain the model once again. 
+- If you met any question, please feel free to contact me through kaysenn@163.com.
 
