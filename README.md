@@ -1,4 +1,4 @@
-# RDRec: Rationale distillation for LLM-based commendation
+# RDRec: Rationale distillation for LLM-based commendation (ACL 2024 short paper)
 
 ## Step. 1 distill rationale before running RDRec
 
