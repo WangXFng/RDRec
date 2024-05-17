@@ -247,7 +247,8 @@ class TopNSampler:
 
 
 class AllBatchify:
-    def __init__(self, exp_data, user2items_pos, negative_num, item_num, tokenizer, exp_len, batch_size, ratio='1:1:1:3'):  # ratio: explanation:sequential:rationale:topn
+    #                                                                      ratio: explanation:sequential:rationale:topn
+    def __init__(self, exp_data, user2items_pos, negative_num, item_num, tokenizer, exp_len, batch_size, ratio):
         self.exp_sampler = ExpSampler(exp_data)
         self.seq_sampler = SeqSampler(user2items_pos)
         self.topn_sampler = TopNSampler(user2items_pos, negative_num, item_num)

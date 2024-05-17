@@ -18,6 +18,8 @@ parser.add_argument('--prompt_num', type=int, default=3,
                     help='prompts per task')
 parser.add_argument('--lr', type=float, default=0.0005,
                     help='learning rate')
+parser.add_argument('--ratio', type=str, default='1:1:1:3',  # ratio: explanation:sequential:rationale:topn
+                    help='ratio of various tasks')
 parser.add_argument('--epochs', type=int, default=100,
                     help='upper epoch limit')
 parser.add_argument('--batch_size', type=int, default=64,
@@ -73,7 +75,7 @@ tokenizer = T5Tokenizer.from_pretrained(model_version)
 exp_corpus = ExpDataLoader(args.data_dir)
 seq_corpus = SeqDataLoader(args.data_dir)
 nitem = len(seq_corpus.id2item)
-all_iterator = AllBatchify(exp_corpus.train, seq_corpus.user2items_positive, args.negative_num, nitem, tokenizer, args.exp_len, args.batch_size)
+all_iterator = AllBatchify(exp_corpus.train, seq_corpus.user2items_positive, args.negative_num, nitem, tokenizer, args.exp_len, args.batch_size, args.ratio)
 exp_iterator = ExpBatchify(exp_corpus.valid, tokenizer, args.exp_len, args.batch_size)
 rea_iterator = ReaBatchify(exp_corpus.valid, tokenizer, args.exp_len, args.batch_size)
 seq_iterator = SeqBatchify(seq_corpus.user2items_positive, tokenizer, args.batch_size)
