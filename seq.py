@@ -3,7 +3,7 @@ import torch
 import random
 import argparse
 from transformers import T5Tokenizer
-from utils import SeqDataLoader, SeqBatchify, now_time, evaluate_ndcg, evaluate_hr
+from utils.utils import SeqDataLoader, SeqBatchify, now_time, evaluate_ndcg, evaluate_hr
 
 
 parser = argparse.ArgumentParser(description='POD (PrOmpt Distillation)')

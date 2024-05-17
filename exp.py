@@ -2,7 +2,7 @@ import os
 import torch
 import argparse
 from transformers import T5Tokenizer
-from utils import rouge_score, bleu_score, ExpDataLoader, ExpBatchify, now_time, ids2tokens
+from utils.utils import rouge_score, bleu_score, ExpDataLoader, ExpBatchify, now_time, ids2tokens
 
 
 parser = argparse.ArgumentParser(description='POD (PrOmpt Distillation)')

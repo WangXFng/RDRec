@@ -1,10 +1,9 @@
 import os
 import torch
 import argparse
-import torch.nn as nn
 from transformers import T5Tokenizer
-from module import Solomon
-from utils import ExpDataLoader, SeqDataLoader, AllBatchify, ExpBatchify, SeqBatchify, TopNBatchify, now_time, ReaBatchify
+from model.module import Solomon
+from utils.utils import ExpDataLoader, SeqDataLoader, AllBatchify, ExpBatchify, SeqBatchify, TopNBatchify, now_time, ReaBatchify
 
 
 parser = argparse.ArgumentParser(description='POD (PrOmpt Distillation)')

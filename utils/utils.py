@@ -3,9 +3,9 @@ import json
 import torch
 import random
 import datetime
-from rouge import rouge
-from bleu import compute_bleu
-from templates import exp_templates, seq_templates, topn_templates, rea_templates
+from utils.rouge import rouge
+from utils.bleu import compute_bleu
+from model.templates import exp_templates, seq_templates, topn_templates, rea_templates
 
 
 def rouge_score(references, generated):
