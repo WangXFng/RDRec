@@ -1,5 +1,5 @@
-# RDRec (ACL 2024 short paper)
-        The paper has been released at [arXiv](https://arxiv.org/abs/2405.10587).
+# [RDRec](https://arxiv.org/pdf/2405.10587) (ACL 2024 Main, short paper)
+        The paper has been released at [arXiv](https://arxiv.org/pdf/2405.10587).
 
 ## Step. 1 distill rationale before running RDRec
 
