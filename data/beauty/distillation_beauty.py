@@ -184,7 +184,7 @@ def main(
     }
 
     # 保存回JSON文件
-    with open('./data/beauty/explanation_rational.json', 'w') as file:
+    with open('./data/beauty/explanation_rationale.json', 'w') as file:
         json.dump(new_data, file, indent=2)
         file.close()
 

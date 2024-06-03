@@ -35,7 +35,7 @@ def bleu_score(references, generated, n_gram=4, smooth=False):
 
 class ExpDataLoader:
     def __init__(self, data_dir):
-        with open(data_dir + 'explanation.json', 'r') as f:
+        with open(data_dir + 'explanation_rationale.json', 'r') as f:
             self.exp_data = json.load(f)
 
         self.train = self.exp_data['train']
