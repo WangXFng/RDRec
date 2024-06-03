@@ -1,5 +1,4 @@
-# RDRec (ACL 2024 short paper)
-        The paper will be released on arXiv soon.
+# RDRec (ACL 2024 Main, short paper) [arXiv](https://arxiv.org/pdf/2405.10587)
 
 ## Step. 1 distill rationale before running RDRec
 
@@ -43,3 +42,13 @@
 - There are some fluctuations in results by RDRec for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
 - If you have any questions, please feel free to contact me at kaysenn@163.com.
 
+
+### Citation
+If this repository helps you, please cite:
+
+	@inproceedings{wang2024rdrec,
+	  title={RDRec: Rationale Distillation for LLM-based Recommendation},
+	  author={Wang, Xinfeng and Cui, Jin and Suzuki, Yoshimi and Fukumoto, Fumiyo},
+	  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
+	  year={2024}
+	}
