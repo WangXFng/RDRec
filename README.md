@@ -1,4 +1,6 @@
 # RDRec (ACL 2024 Main, short paper) [arXiv](https://arxiv.org/pdf/2405.10587)
+- Code and data were updated on June 5th. Please use the latest version. 
+- The checkpoints of RDRec model will be uploaded on [Google drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
 ## Step. 1 distill rationale before running RDRec
 
