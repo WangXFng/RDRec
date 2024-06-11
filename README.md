@@ -8,6 +8,7 @@
 - The checkpoints of the RDRec model will be uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
 
+## Instruction
 ### Step. 1 distill rationale before running RDRec
 
 #### (a) Install llama 2 （download model weights and tokenizer）
