@@ -4,10 +4,11 @@
 - RDRec: Rationale Distillation for LLM-based Recommendation, **ACL 2024 Main (short)**.
 
 ## Note
-- The latest code was released on **June 11th, 2024**.
+- Please use the latest code released on **June 11th, 2024**.
 - The checkpoints of the RDRec model will be uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
-## Step. 1 distill rationale before running RDRec
+
+### Step. 1 distill rationale before running RDRec
 
 #### (a) Install llama 2 （download model weights and tokenizer）
         get the License from [the site](https://llama.meta.com/llama-downloads/)
@@ -27,7 +28,7 @@
           --tokenizer_path llama/tokenizer.model \
           --max_seq_len 512 --max_batch_size 6
 
-## Step. 2 train and test RDRec
+### Step. 2 train and test RDRec
 
 #### (a) Install requirement 
         >> pip install -r  requirement.txt
@@ -40,15 +41,17 @@
         >> python topn.py ./data/{dataset}/ --cuda --batch_size 32 --checkpoint ./checkpoint/{dataset}/
         >> python exp.py ./data/{dataset}/ --cuda --batch_size 32 --checkpoint ./checkpoint/{dataset}/
 
+
+## Others
+- All experiments, including rationale distillation, can be conducted on a single Nvidia GeForce RTX 3090 (24GB memory). Reduce the batch size if you encounter an OOM error on some dataset.
+- There are some fluctuations in RDRec's results for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
+- If you have any questions, please feel free to contact me at kaysenn@163.com.
+
+
 ## Code Reference
 - [P5](https://github.com/jeykigung/P5)
 - [POD](https://github.com/lileipisces/POD)
 - [llama 2](https://github.com/facebookresearch/llama)
-
-## Others
-- There are some fluctuations in RDRec's results for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
-- All experiments, including rationale distillation, can be conducted on a single Nvidia GeForce RTX 3090 (24GB memory). Reduce the batch size if you encounter an OOM error on some dataset.
-- If you have any questions, please feel free to contact me at kaysenn@163.com.
 
 
 ## Citation
