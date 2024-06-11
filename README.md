@@ -1,6 +1,7 @@
-# RDRec (ACL 2024 Main, short paper) [arXiv](https://arxiv.org/pdf/2405.10587)
-- Code and data were updated on June 5th. Please use the latest version. 
-- The checkpoints of RDRec model will be uploaded on [Google drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
+# RDRec [arXiv](https://arxiv.org/pdf/2405.10587)
+- RDRec: Rationale Distillation for LLM-based Recommendation, ACL 2024 Main (short).
+- Code and data were updated on **June 11th, 2024**. Please use the latest version. 
+- The checkpoints of the RDRec model will be uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
 ## Step. 1 distill rationale before running RDRec
 
@@ -41,7 +42,7 @@
 - [llama 2](https://github.com/facebookresearch/llama)
 
 ## Note
-- There are some fluctuations in results by RDRec for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
+- There are some fluctuations in RDRec's results for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
 - If you have any questions, please feel free to contact me at kaysenn@163.com.
 
 
