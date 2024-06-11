@@ -107,6 +107,8 @@ user2rank_list = {}
 for predictions, user in zip(idss_predicted, seq_iterator.user_list):
     prediction_list = []
     for p in predictions:
+
+        # For exclude the unexpected results, including Non-ID, e.g., 'user_' and '_', and IDs of interacted items.
         try:
             # prediction_list.append(int(p.split(' ')[0]))  #
             predicted_item_id = int(p.split(' ')[0])  # use the id before white space
