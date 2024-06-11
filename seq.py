@@ -19,7 +19,7 @@ parser.add_argument('--checkpoint', type=str, default='./pod/',
                     help='directory to load the final model')
 parser.add_argument('--num_beams', type=int, default=20,
                     help='number of beams')
-parser.add_argument('--top_n', type=int, default=10,
+parser.add_argument('--top_n', type=int, default=15,
                     help='number of items to predict')
 args = parser.parse_args()
 
@@ -99,23 +99,28 @@ print(now_time() + 'Generating recommendations')
 idss_predicted = generate()
 print(now_time() + 'Evaluation')
 user2item_test = {}
+interacted_items = {}
 for user, item_list in seq_corpus.user2items_positive.items():
     user2item_test[user] = [int(item_list[-1])]
+    interacted_items[user] = [int(item_id) for item_id in item_list[:-1]]
 user2rank_list = {}
 for predictions, user in zip(idss_predicted, seq_iterator.user_list):
     prediction_list = []
     for p in predictions:
         try:
-            prediction_list.append(int(p.split(' ')[0]))  # use the id before white space
+            # prediction_list.append(int(p.split(' ')[0]))  #
+            predicted_item_id = int(p.split(' ')[0])  # use the id before white space
+            if predicted_item_id not in interacted_items[user]:
+                prediction_list.append(predicted_item_id)
         except:
             prediction_list.append(random.randint(1, nitem))  # randomly generate a recommendation
     user2rank_list[user] = prediction_list
 
-top_ns = [1]
-if args.top_n >= 5:
-    for i in range(1, (args.top_n // 5) + 1):
-        top_ns.append(i * 5)
-for top_n in top_ns:
+# top_ns = [1]
+# if args.top_n >= 5:
+#     # for i in range(1, (args.top_n // 5) + 1):
+#         top_ns.append(i * 5)
+for top_n in [1, 5, 10]:
     hr = evaluate_hr(user2item_test, user2rank_list, top_n)
     print(now_time() + 'HR@{} {:7.4f}'.format(top_n, hr))
     ndcg = evaluate_ndcg(user2item_test, user2rank_list, top_n)

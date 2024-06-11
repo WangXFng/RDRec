@@ -17,7 +17,7 @@ parser.add_argument('--prompt_num', type=int, default=3,
                     help='prompts per task')
 parser.add_argument('--lr', type=float, default=0.0005,
                     help='learning rate')
-parser.add_argument('--ratio', type=str, default='1:1:1:3',  # ratio: explanation:sequential:rationale:topn
+parser.add_argument('--ratio', type=str, default='1:1:1:1',  # ratio: explanation:sequential:rationale:topn
                     help='ratio of various tasks')
 parser.add_argument('--epochs', type=int, default=100,
                     help='upper epoch limit')
