@@ -1,5 +1,5 @@
 # RDRec [arXiv](https://arxiv.org/pdf/2405.10587)
-- RDRec: Rationale Distillation for LLM-based Recommendation, ACL 2024 Main (short).
+- RDRec: Rationale Distillation for LLM-based Recommendation, **ACL 2024 Main (short)**.
 - Code and data were updated on **June 11th, 2024**. Please use the latest version. 
 - The checkpoints of the RDRec model will be uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
