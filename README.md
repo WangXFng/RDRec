@@ -4,8 +4,8 @@
 - RDRec: Rationale Distillation for LLM-based Recommendation, **ACL 2024 Main (short)**.
 
 ## Note
-- Please use the latest code released on **June 11th, 2024**.
-- The checkpoints of the RDRec model will be uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
+- Please use the latest code released on **<u>June 11th, 2024</u>**.
+- The checkpoints of the RDRec model were uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s).
 
 
 ## Instruction
@@ -44,7 +44,7 @@
 
 
 ## Others
-- All experiments, including rationale distillation, can be conducted on a single Nvidia GeForce RTX 3090 (24GB memory). Reduce the batch size if you encounter an OOM error on some dataset.
+- All experiments, including rationale distillation, can be conducted on a **<u>single Nvidia GeForce RTX 3090 (24GB memory)</u>**. Reduce the batch size if you encounter an OOM error on some dataset.
 - There are some fluctuations in RDRec's results for sequential recommendations. We reported average results in 10-trial runs in the paper  (See [t_test.py](https://github.com/WangXFng/RDRec/blob/main/utils/t_test.py) for more details). If the results are not ideal, please pre-train the model once again. 
 - If you have any questions, please feel free to contact me at kaysenn@163.com.
 
