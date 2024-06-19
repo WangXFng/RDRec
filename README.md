@@ -6,6 +6,7 @@
 ## Note
 - Please use the latest code released on **<u>June 11th, 2024</u>**.
 - The checkpoints of the RDRec model were uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s) and [Baidu Drive](https://pan.baidu.com/s/15TQ6zi-ZHfPik02bjlPwRQ?pwd=eb3d ).
+- The experimental setup follows [POD](https://github.com/lileipisces/POD). If there is any problem, please check our code or this paper.
 
 
 ## Instruction
