@@ -2,6 +2,7 @@
 
 ## Paper
 - RDRec: Rationale Distillation for LLM-based Recommendation, **ACL 2024 Main (short)**.
+- [**Xinfeng Wang**](https://wangxfng.github.io/), Jin Cui, Yoshimi Suzuki, Fumiyo Fukumoto.
 
 ## Note
 - Please use the latest code released on **<u>June 11th, 2024</u>**.
