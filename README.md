@@ -6,7 +6,7 @@
 
 ## Note
 - Please use the latest code released on **<u>June 11th, 2024</u>**.
-- The checkpoints of the RDRec model were uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s) and [Baidu Drive](https://pan.baidu.com/s/15TQ6zi-ZHfPik02bjlPwRQ?pwd=eb3d ).
+- The checkpoints of the RDRec model for Step 2 were uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s) and [Baidu Drive](https://pan.baidu.com/s/15TQ6zi-ZHfPik02bjlPwRQ?pwd=eb3d ).
 - The experimental setup follows [POD](https://github.com/lileipisces/POD). If there is any problem, please check our code or this paper.
 
 
@@ -64,5 +64,6 @@ If this repository helps you, please cite:
 	  title={RDRec: Rationale Distillation for LLM-based Recommendation},
 	  author={Wang, Xinfeng and Cui, Jin and Suzuki, Yoshimi and Fukumoto, Fumiyo},
 	  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
+   	  pages={65--74}
 	  year={2024}
 	}
