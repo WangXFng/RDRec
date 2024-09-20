@@ -48,29 +48,35 @@ def generate_(
                 data[i * max_batch_size + j]['user_preference'] = strs[1][3:]
                 data[i * max_batch_size + j]['item_attribution'] = strs[2][3:]
             except Exception as e:
-                if strs[1].contains('1. '):
+                try:
+                    if strs[1].contains('1. '):
 
-                    # for the case that
-                    # 1. The user prefers a hair cutting tool that can handle long hair,
-                    # and the item's attributes include a long cutting length for ease of use.
-                    strss = strs[1].split(', and ')
-                    if len(strss) > 1:
-                        data[i * max_batch_size + j]['user_preference'] = strss[0][3:]
-                        data[i * max_batch_size + j]['item_attribution'] = strss[1]
-                        continue
+                        # for the case that
+                        # 1. The user prefers a hair cutting tool that can handle long hair,
+                        # and the item's attributes include a long cutting length for ease of use.
+                        strss = strs[1].split(', and ')
+                        if len(strss) > 1:
+                            data[i * max_batch_size + j]['user_preference'] = strss[0][3:]
+                            data[i * max_batch_size + j]['item_attribution'] = strss[1]
+                            continue
 
-                    # for the case like:
-                    # 1. The user prefers item 2 because it is better than a dozen pins.
-                    # (2. The item's attributes are better than a dozen pins.)
-                    strss = strs[1].index('(2. ')
-                    if len(strss) > 1:
-                        data[i * max_batch_size + j]['user_preference'] = strss[0][3:]
-                        data[i * max_batch_size + j]['item_attribution'] = strss[1]
-                        continue
+                        # for the case like:
+                        # 1. The user prefers item 2 because it is better than a dozen pins.
+                        # (2. The item's attributes are better than a dozen pins.)
+                        strss = strs[1].index('(2. ')
+                        if len(strss) > 1:
+                            data[i * max_batch_size + j]['user_preference'] = strss[0][3:]
+                            data[i * max_batch_size + j]['item_attribution'] = strss[1]
+                            continue
 
-                print(result['generation']['content'])
-                data[i * max_batch_size + j]['user_preference'] = data[i * max_batch_size + j]['explanation']
-                data[i * max_batch_size + j]['item_attribution'] = data[i * max_batch_size + j]['explanation']
+                    print(result['generation']['content'])
+                    data[i * max_batch_size + j]['user_preference'] = data[i * max_batch_size + j]['explanation']
+                    data[i * max_batch_size + j]['item_attribution'] = data[i * max_batch_size + j]['explanation']
+
+                except Exception as e:
+                    # still meet other issues
+                    data[i * max_batch_size + j]['user_preference'] = data[i * max_batch_size + j]['explanation']
+                    data[i * max_batch_size + j]['item_attribution'] = data[i * max_batch_size + j]['explanation']
 
             # for msg in dialog:
             #     print(f"{msg['role'].capitalize()}: {msg['content']}\n")
