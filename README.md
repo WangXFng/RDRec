@@ -34,7 +34,7 @@
 ### Step. 2 train and test RDRec
 
 #### (a) Install requirement 
-        >> pip install -r  requirement.txt
+        >> pip install -r requirements.txt
 
 #### (b) Pre-training ({dataset}: beauty, sports, and toys.) (under ./RDRec )
         >> python pretrain.py --data_dir ./data/{dataset}/ --cuda --batch_size 64 --checkpoint ./checkpoint/{dataset}/
