@@ -1,4 +1,4 @@
-# RDRec
+# RDRec (ACL'24)
 
 ## Paper - [[ArXiv]](https://arxiv.org/pdf/2405.10587)
 - RDRec: Rationale Distillation for LLM-based Recommendation, **ACL 2024 Main (short)**.
