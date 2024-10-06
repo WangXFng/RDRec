@@ -60,10 +60,10 @@
 ## Citation
 If this repository helps you, please cite:
 
-	@inproceedings{wang2024rdrec,
+	@article{wang2024rdrec,
 	  title={RDRec: Rationale Distillation for LLM-based Recommendation},
 	  author={Wang, Xinfeng and Cui, Jin and Suzuki, Yoshimi and Fukumoto, Fumiyo},
-	  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)},
-   	  pages={65--74}
+	  journal={arXiv preprint arXiv:2405.10587},
 	  year={2024}
 	}
+
