@@ -57,11 +57,6 @@
 - [llama 2](https://github.com/facebookresearch/llama)
 
 
-## Recent Paper - [[ArXiv]](https://arxiv.org/pdf/2409.19979) [[Code]](https://github.com/WangXFng/ELMRec)
-- Enhancing High-order Interaction Awareness in LLM-based Recommender Model, **EMNLP 2024 Main**.
-- [**Xinfeng Wang**](https://wangxfng.github.io/), Jin Cui, Fumiyo Fukumoto, and Yoshimi Suzuki.
-
-
 ## Citation
 If this repository helps you, please cite:
 
@@ -72,3 +67,7 @@ If this repository helps you, please cite:
 	  year={2024}
 	}
 
+
+## Recent Paper - [[ArXiv]](https://arxiv.org/pdf/2409.19979) [[Code]](https://github.com/WangXFng/ELMRec)
+- Enhancing High-order Interaction Awareness in LLM-based Recommender Model, **EMNLP 2024 Main**.
+- [**Xinfeng Wang**](https://wangxfng.github.io/), Jin Cui, Fumiyo Fukumoto, and Yoshimi Suzuki.
