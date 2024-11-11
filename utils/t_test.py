@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import ttest_ind
 
-seq_data_sample = {
+topn_data_sample = {
     'Toys': {
         'HR@1':     [[0.0650, 0.0655, 0.0657, 0.0688, 0.0641, 0.0685, 0.0671, 0.0649, 0.0604, 0.0695],
                      [0.0579, 0.0579, 0.0595, 0.0572, 0.0612, 0.0574, 0.0596, 0.0583, 0.0563, 0.0537]],
@@ -66,7 +66,7 @@ alpha = 0.05
 #                 # print("Fail to reject null hypothesis: There is no significant difference between the means.")
 
 
-topn_data_sample = {
+seq_data_sample = {
     'Toys': {
         'HR@5':     [[0.0733, 0.0747, 0.0720, 0.0730, 0.0695, 0.0733, 0.0750, 0.0699, 0.0702, 0.0721],
                      [0.0695, 0.0691, 0.072, 0.0696, 0.0712, 0.0711, 0.0699, 0.063, 0.0696, 0.0696]],
