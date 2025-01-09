@@ -66,8 +66,3 @@ If this repository helps you, please cite:
 	  journal={arXiv preprint arXiv:2405.10587},
 	  year={2024}
 	}
-
-
-## More Recent Paper - [[ArXiv]](https://arxiv.org/pdf/2409.19979) [[Code]](https://github.com/WangXFng/ELMRec)
-- Enhancing High-order Interaction Awareness in LLM-based Recommender Model, **EMNLP 2024 Main**.
-- [**Xinfeng Wang**](https://wangxfng.github.io/), Jin Cui, Fumiyo Fukumoto, and Yoshimi Suzuki.
