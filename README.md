@@ -63,7 +63,5 @@ If this repository helps you, please cite:
 
 
 ## Acknowledge
-- [P5](https://github.com/jeykigung/P5)
-- [POD](https://github.com/lileipisces/POD)
-- [llama 2](https://github.com/facebookresearch/llama)
+- Code reference: [P5](https://github.com/jeykigung/P5), [POD](https://github.com/lileipisces/POD), and [llama 2](https://github.com/facebookresearch/llama).
 - Thanks to Wei-Hsiang Huang's careful review, although RDRec independently generate user preferences and item attributes, training data for explanation generations could potentially include the last items.
