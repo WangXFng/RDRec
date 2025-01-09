@@ -8,7 +8,6 @@
 - Please use the latest code released on **<u>June 11th, 2024</u>**.
 - The checkpoints of the RDRec model for Step 2 were uploaded on [Google Drive](https://drive.google.com/drive/folders/1bwhliM4KN8pBdk5c0pRPDVCgTJbeOk0s) and [Baidu Drive](https://pan.baidu.com/s/15TQ6zi-ZHfPik02bjlPwRQ?pwd=eb3d ).
 - The experimental setup follows [POD](https://github.com/lileipisces/POD). If there is any problem, please check our code or [[ArXiv]](https://arxiv.org/pdf/2405.10587).
-- Thanks to Wei-Hsiang Huang's careful review, although RDRec independently generate user preferences and item attributes, training data for explanation generations could potentially include the last items.
 
 ## Instruction
 ### Step. 1 distill rationale before running RDRec
@@ -51,11 +50,6 @@
 - If you have any questions, please feel free to contact me at kaysenn@163.com.
 
 
-## Code Reference
-- [P5](https://github.com/jeykigung/P5)
-- [POD](https://github.com/lileipisces/POD)
-- [llama 2](https://github.com/facebookresearch/llama)
-
 
 ## Citation
 If this repository helps you, please cite:
@@ -66,3 +60,10 @@ If this repository helps you, please cite:
 	  journal={arXiv preprint arXiv:2405.10587},
 	  year={2024}
 	}
+
+
+## Acknowledge
+- [P5](https://github.com/jeykigung/P5)
+- [POD](https://github.com/lileipisces/POD)
+- [llama 2](https://github.com/facebookresearch/llama)
+- Thanks to Wei-Hsiang Huang's careful review, although RDRec independently generate user preferences and item attributes, training data for explanation generations could potentially include the last items.
