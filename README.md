@@ -32,7 +32,7 @@
 ### Step. 2 train and test RDRec
 
 #### (a) Install requirement (After installing torch)
-	>> pip install transformers==4.36.2 -i https://pypi.python.org/simple
+        >> pip install transformers==4.36.2 -i https://pypi.python.org/simple
         >> pip install -r requirements.txt
 
 #### (b) Pre-training ({dataset}: beauty, sports, and toys.) (under ./RDRec )
